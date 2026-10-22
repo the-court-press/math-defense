@@ -1,0 +1,22 @@
+{
+  "name": "math-defense",
+  "version": "0.1.4",
+  "description": "Math Defense: Clear the Fog. A numpad-first math tower defense game. No backend.",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --dev",
+    "check": "tsc -p tsconfig.json",
+    "test": "esbuild tests/run.ts --bundle --platform=node --outfile=.tmp/tests.cjs --log-level=warning && node .tmp/tests.cjs",
+    "balance": "esbuild tools/balance.ts --bundle --platform=node --outfile=.tmp/balance.cjs --log-level=warning && node .tmp/balance.cjs",
+    "shots": "node build.mjs --dev && node tools/shots.mjs"
+  },
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "playwright": "1.64.1",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
